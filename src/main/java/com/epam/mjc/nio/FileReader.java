@@ -37,11 +37,7 @@ public class FileReader {
 
             String string = profileData.toString();
 
-            if(string != null) {
-
                 String[] splitStrings = string.split("\n");
-
-                if (splitStrings.length == 4) {
 
                     String[] profileFields = new String[splitStrings.length];
 
@@ -49,24 +45,15 @@ public class FileReader {
 
                         String[] tempArray = splitStrings[i].split(" ");
 
-                        if (tempArray.length == 2) {
-
                             profileFields[i] = tempArray[1];
 
-                        }
-
                     }
-
-                    if (profileFields.length == 4) {
 
                         name = profileFields[0];
                         age = Integer.parseInt(profileFields[1]);
                         email = profileFields[2];
                         phone = Long.parseLong(profileFields[3]);
 
-                    }
-                }
-            }
 
         } catch (IOException e) {
 
